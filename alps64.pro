@@ -1,4 +1,4 @@
-update=Wed 13 Apr 2016 12:23:18 PM JST
+update=Wed 22 Feb 2017 15:24:22 JST
 version=1
 last_client=kicad
 [cvpcb]
