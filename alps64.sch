@@ -1,37 +1,8 @@
 EESchema Schematic File Version 2
 LIBS:alps64-rescue
 LIBS:keyboard_parts
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
 LIBS:alps64-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -45,17 +16,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L ATMEGA32U2 U1
-U 1 1 53E1BC7B
-P 5225 2050
-F 0 "U1" H 5225 1100 60  0000 C CNN
-F 1 "32U2" H 5225 3000 60  0000 C CNN
-F 2 "keyboard_parts:QFP32_reflow" H 5225 1750 60  0001 C CNN
-F 3 "" H 5225 1750 60  0000 C CNN
-	1    5225 2050
-	1    0    0    -1  
-$EndComp
 $Sheet
 S 9350 4500 1100 1450
 U 53E3503A
@@ -233,8 +193,6 @@ Wire Wire Line
 Wire Wire Line
 	4175 2400 3625 2400
 Wire Wire Line
-	3250 2500 4175 2500
-Wire Wire Line
 	9050 4850 9350 4850
 Wire Wire Line
 	9350 5000 9050 5000
@@ -274,8 +232,6 @@ Wire Wire Line
 	4175 2800 3625 2800
 Wire Wire Line
 	6325 1800 9350 1800
-Wire Wire Line
-	6325 2100 7375 2100
 Wire Wire Line
 	6325 2400 6875 2400
 Wire Wire Line
@@ -380,30 +336,28 @@ Text Label 3950 2400 0    60   ~ 0
 row6
 Text Label 3950 1700 0    60   ~ 0
 row7
-Wire Wire Line
-	3250 2500 3250 2650
 $Comp
 L R R3
 U 1 1 53E2E032
-P 3250 2900
-F 0 "R3" V 3330 2900 50  0000 C CNN
-F 1 "1K" V 3250 2900 50  0000 C CNN
-F 2 "keyboard_parts:R_1608" H 3250 2900 60  0001 C CNN
-F 3 "" H 3250 2900 60  0000 C CNN
-	1    3250 2900
+P 3900 3525
+F 0 "R3" V 3980 3525 50  0000 C CNN
+F 1 "1K" V 3900 3525 50  0000 C CNN
+F 2 "keyboard_parts:R_1608" H 3900 3525 60  0001 C CNN
+F 3 "" H 3900 3525 60  0000 C CNN
+	1    3900 3525
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3250 3150 3250 3225
+	3900 3775 3900 3850
 $Comp
 L GND #PWR03
 U 1 1 53E2E39E
-P 3250 3225
-F 0 "#PWR03" H 3250 3225 30  0001 C CNN
-F 1 "GND" H 3250 3155 30  0001 C CNN
-F 2 "" H 3250 3225 60  0000 C CNN
-F 3 "" H 3250 3225 60  0000 C CNN
-	1    3250 3225
+P 3900 3850
+F 0 "#PWR03" H 3900 3850 30  0001 C CNN
+F 1 "GND" H 3900 3780 30  0001 C CNN
+F 2 "" H 3900 3850 60  0000 C CNN
+F 3 "" H 3900 3850 60  0000 C CNN
+	1    3900 3850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -590,26 +544,43 @@ F 3 "" H 8675 2575 60  0000 C CNN
 	1    8675 2575
 	1    0    0    -1  
 $EndComp
-$Comp
-L LED LED1
-U 1 1 5506952C
-P 8375 2000
-F 0 "LED1" H 8375 2100 50  0000 C CNN
-F 1 "LED" H 8375 1900 50  0000 C CNN
-F 2 "keyboard_parts:LED_2012_HSOL" H 8375 2000 60  0001 C CNN
-F 3 "" H 8375 2000 60  0000 C CNN
-	1    8375 2000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8675 2825 8675 2850
 Connection ~ 8675 2850
+Text Notes 4950 2750 0    60   ~ 0
+ATMega32U2
 Wire Wire Line
-	8575 2000 8675 2000
+	8625 2000 8675 2000
+$Comp
+L LED LED1
+U 1 1 58EB00FF
+P 8425 2000
+F 0 "LED1" H 8425 2100 50  0000 C CNN
+F 1 "LED" H 8425 1900 50  0000 C CNN
+F 2 "" H 8425 2000 60  0000 C CNN
+F 3 "" H 8425 2000 60  0000 C CNN
+	1    8425 2000
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
 	8675 2000 8675 2325
 Wire Wire Line
-	8175 2000 6325 2000
-Text Notes 4950 2750 0    60   ~ 0
-ATMega32U2
+	6325 2100 7375 2100
+$Comp
+L ATMEGA32U2 U1
+U 1 1 53E1BC7B
+P 5225 2050
+F 0 "U1" H 5225 1100 60  0000 C CNN
+F 1 "32U2" H 5225 3000 60  0000 C CNN
+F 2 "keyboard_parts:QFP32_reflow" H 5225 1750 60  0001 C CNN
+F 3 "" H 5225 1750 60  0000 C CNN
+	1    5225 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8225 2000 6325 2000
+Wire Wire Line
+	3900 3275 3900 2500
+Wire Wire Line
+	3900 2500 4175 2500
 $EndSCHEMATC
